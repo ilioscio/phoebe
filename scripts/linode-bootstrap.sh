@@ -69,7 +69,7 @@ set -x
 
 ################################################################################
 # FIXME: Calculate this URL at run time:
-NIXOS_URL="https://d3g5gsiof5omrk.cloudfront.net/nixos/18.09/nixos-18.09.1834.9d608a6f592/nixos-minimal-18.09.1834.9d608a6f592-x86_64-linux.iso"
+NIXOS_URL="https://channels.nixos.org/nixos-20.03/latest-nixos-minimal-x86_64-linux.iso"
 
 ################################################################################
 # Label the disks so the rest of the script only uses labels.
@@ -97,7 +97,7 @@ prep_nixos_disks() {
 
 ################################################################################
 # Given a disk label, update the hardware configuration so the UUID is
-# replaced with a disk lable.
+# replaced with a disk label.
 hardware_uuid_to_label() {
   label=$1
   uuid=$(blkid --match-tag UUID --output value /dev/disk/by-label/"$label")
